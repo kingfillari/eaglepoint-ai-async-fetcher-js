@@ -168,7 +168,9 @@ cd eaglepoint-ai-async-fetcher-js
 
 
 npm install
+
 npm test
+
 npm run example:basic
 
 
