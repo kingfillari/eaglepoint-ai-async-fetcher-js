@@ -1,0 +1,42 @@
+{
+  "name": "eaglepoint-ai-async-fetcher-js",
+  "version": "1.0.0",
+  "description": "JavaScript async data fetcher with retry logic. Fetches data from URLs, retries on failure (up to max retry count), waits 1 second between retries, returns data or throws error after all retries fail. Uses async/await with mock API for testing.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "test:coverage": "node test/test.js --coverage",
+    "example:basic": "node examples/basic-usage.js",
+    "example:error": "node examples/error-handling.js",
+    "example:custom": "node examples/custom-config.js",
+    "example:all": "npm run example:basic && npm run example:error && npm run example:custom"
+  },
+  "keywords": [
+    "javascript",
+    "async-await",
+    "fetch-api",
+    "retry-logic",
+    "error-handling",
+    "api-client",
+    "network-requests",
+    "eaglepoint-ai"
+  ],
+  "author": "EaglePoint AI",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kingfillari/eaglepoint-ai-async-fetcher-js.git"
+  },
+  "homepage": "https://github.com/kingfillari/eaglepoint-ai-async-fetcher-js#readme",
+  "bugs": {
+    "url": "https://github.com/kingfillari/eaglepoint-ai-async-fetcher-js/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "src/",
+    "LICENSE",
+    "README.md"
+  ]
+}
