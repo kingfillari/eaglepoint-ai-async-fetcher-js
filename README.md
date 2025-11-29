@@ -1,117 +1,134 @@
-# EaglePoint AI Async Fetcher - JavaScript
+### 🦅 EaglePoint AI Async Fetcher – JavaScript
 
-JavaScript async data fetcher with retry logic. Fetches data from URLs, retries on failure (up to max retry count), waits 1 second between retries, returns data or throws error after all retries fail. Uses async/await with mock API for testing.
+A lightweight JavaScript async data fetcher with retry logic.
+Fetches data from URLs, retries on failure (up to a max retry count), waits 1 second between retries, and returns data or throws an error.
+Includes async/await support and a mock API for testing.
 
-## ✅ Requirements Met
+# ✅ Features
 
-- ✅ Fetches data from a URL
-- ✅ Retries on failure (up to max retry count)
-- ✅ Waits 1 second between retries
-- ✅ Returns data or throws error after all retries fail
-- ✅ Uses async/await
-- ✅ Includes mock API for testing
+🚀 Fetches data from a URL
 
-## 🚀 Installation
+🔁 Retries automatically on failure
 
-```bash
-git clone https://github.com/your-username/eaglepoint-ai-async-fetcher-js
+⏳ Waits 1 second between retries
+
+🛑 Throws error after all retries fail
+
+🧩 Uses async/await
+
+🧪 Includes mock API for controlled testing
+
+# 📦 Installation
+
+git clone https://github.com/kingfillari/eaglepoint-ai-async-fetcher-js
 cd eaglepoint-ai-async-fetcher-js
 npm install
-📖 Usage
-Basic Usage
-javascript
+
+# 📖 Usage
+# Basic Usage
+
+
 const { fetchWithRetry } = require('./src');
 
 // Basic usage with default retries (3)
 fetchWithRetry('https://api.example.com/data')
     .then(data => console.log('Success:', data))
     .catch(error => console.log('Failed:', error.message));
-Custom Retry Count
-javascript
+    
+# Custom Retry Count
+
+
 // Custom retry count (5 attempts)
 fetchWithRetry('https://api.example.com/data', 5)
     .then(data => console.log('Success:', data))
     .catch(error => console.log('Failed after 5 attempts:', error.message));
-With Mock API
-javascript
+
+# Using the Mock API
+
 const { mockApiCall } = require('./src');
 
-// Test with mock API
-mockApiCall(0.7) // 70% success rate
+// Test with mock API (70% success rate)
+mockApiCall(0.7)
     .then(result => console.log('Mock success:', result))
     .catch(error => console.log('Mock failed:', error.message));
-🧪 Testing
-Run the test suite:
 
-bash
+# 🧪 Testing
+
 npm test
-Run examples:
 
-bash
 # Basic usage example
 npm run example:basic
 
-# Error handling example  
+# Error handling example
 npm run example:error
 
 # Custom configuration example
 npm run example:custom
-📁 Project Structure
-text
+
+# 📁 Project Structure
+
 eaglepoint-ai-async-fetcher-js/
 ├── src/
-│   ├── fetchWithRetry.js    # Main implementation
-│   └── mockApi.js           # Mock API for testing
-├── examples/                 # Usage examples
-├── test/                    # Test suite
+│   ├── fetchWithRetry.js      # Main implementation
+│   └── mockApi.js             # Mock API for testing
+├── examples/                  # Usage examples
+├── test/                      # Test suite
 └── package.json
-🔧 API Reference
-fetchWithRetry(url, maxRetries)
-url (string): The URL to fetch data from
 
-maxRetries (number, optional): Maximum retry attempts (default: 3)
+# 🔧 API Reference
 
-Returns: Promise<any> - Fetched data
+# fetchWithRetry(url, maxRetries)
+Parameter	                 Type	                      Description
+url	                        string	                URL to fetch data from
+maxRetries           	number (optional)	        Maximum retry attempts (default: 3)
 
-Throws: Error - After all retry attempts fail
+# Returns: Promise<any> — fetched data
 
-mockApiCall(successProbability)
-successProbability (number, optional): Probability of success 0-1 (default: 0.5)
+# Throws: Error — after all retry attempts fail
 
-Returns: Promise<Object> - Mock response data
+# mockApiCall(successProbability)
 
-Throws: Error - When the mock API call fails
+Parameter	                      Type	                       Description
+successProbability          	number (0–1)	          Probability the call succeeds
 
-📄 License
-MIT
+# Returns: Promise<Object> — mock response data
 
-text
+# Throws: Error — when simulated API call fails
 
-### LICENSE
-```text
-MIT License
+# 📄 License
 
-Copyright (c) 2024 EaglePoint AI
+# Licensed under the  BSD 3-Clause License License.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Copyright 2025 EaglePoint AI. All rights reserved.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-.gitignore
-gitignore
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+# 🗂️ .gitignore
+
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -138,19 +155,20 @@ Thumbs.db
 # Logs
 logs
 *.log
-🚀 Setup Instructions
-Create the project directory:
 
-bash
+
+
+### 🚀 Setup From Scratch
+
+
 mkdir eaglepoint-ai-async-fetcher-js
 cd eaglepoint-ai-async-fetcher-js
-Create all the files with the content above
 
-Initialize and test:
+### Create all required files, then:###
 
-bash
+
 npm install
 npm test
 npm run example:basic
-This pure JavaScript implementation exactly matches all your requirements with a clean, professional structure ready for your job application!
+
 
